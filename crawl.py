@@ -24,18 +24,18 @@ def crawl(uri):
         graph.add(t)
 
 seen = set()
-uris = ['http://dewey.info/class/00/2009/08/about.en']
+uris = ['http://dewey.info/class/%s/' % n for n in range(0,10)]
 graph = rdflib.ConjunctiveGraph('Sleepycat')
 graph.open('store', create=True)
 
 while len(uris) > 0:
     uri = uris.pop(0)
-    print uri
 
     if 'http://dewey.info' not in uri: 
         print "skipping: %s" % uri
         continue
     try:
+        print "crawling: %s" % uri
         crawl(uri)
     except KeyboardInterrupt:
         break
@@ -47,5 +47,6 @@ graph.bind('dcterms', 'http://purl.org/dc/terms/')
 graph.bind('xhtml', 'http://www.w3.org/1999/xhtml/vocab#')
 graph.bind('skos', 'http://www.w3.org/2004/02/skos/core#')
 graph.serialize(open('dewey.ttl', 'w'), format='n3')
+graph.serialize(open('dewey.rdf', 'w'), format='xml')
 
 graph.close()
