@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 
 """
-Simplistic cralwer for rdfa linked data at dewey.info.
+Simplistic single-threaded crawler for linked data at http://dewey.info/
+
+You'll need to have rdflib installed <http://rdflib.net>, afterwhich you
+should be able to run: crawl.py
+
+After a successful run you should have a dewey.rdf and dewey.ttl file in 
+your working directory.
 """
 
 import rdflib
