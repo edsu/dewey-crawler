@@ -1,6 +1,7 @@
 dewey-crawler is a simplistic, single threaded, possibly daft, crawler for 
 Dewey Decimal Classification Summaries at http://dewey.info from the folks
-at OCLC.
+at OCLC. The idea is to be able to pull down the summaries to make it 
+easier to reference the resources in your linked data application.
 
 More information about the data at http://dewey.info can be found at:
 
