@@ -6,11 +6,12 @@ More information about the data at http://dewey.info can be found at:
 
   http://www.worldcat.org/devnet/wiki/DeweyInfoTechOverview
 
-After a crawl you'll have a rdflib berkelydb triple store on disk, and 
-a dump of all the triples as turtle and rdf/xml.
+After a crawl you'll have a rdflib berkelydb triple store on disk. You can
+then run dump.py to generate dewey.rdf, dewey.ttl and dewey.json.
 
 Usage:
 ./crawl.py
+./dump.py
 
 Dependencies:
 rdflib 3.0

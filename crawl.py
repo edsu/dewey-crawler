@@ -1,13 +1,8 @@
 #!/usr/bin/env python
 
 """
-Simplistic single-threaded crawler for linked data at http://dewey.info/
-
-You'll need to have rdflib installed <http://rdflib.net>, afterwhich you
-should be able to run: crawl.py
-
-After a successful run you should have a dewey.rdf and dewey.ttl file in 
-your working directory.
+populates a berkelydb rdflib triplestore with triples harvested from 
+dewey.info
 """
 
 import rdflib
@@ -47,12 +42,5 @@ while len(uris) > 0:
         break
     except Exception, e:
         print e
-
-graph.bind('cc', 'http://creativecommons.org/ns#')
-graph.bind('dcterms', 'http://purl.org/dc/terms/')
-graph.bind('xhtml', 'http://www.w3.org/1999/xhtml/vocab#')
-graph.bind('skos', 'http://www.w3.org/2004/02/skos/core#')
-graph.serialize(open('dewey.ttl', 'w'), format='n3')
-graph.serialize(open('dewey.rdf', 'w'), format='xml')
 
 graph.close()
