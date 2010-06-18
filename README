@@ -17,6 +17,15 @@ Usage:
 Dependencies:
 rdflib 3.0
 
+License:
+
+This code is in the Public Domain.
+http://creativecommons.org/licenses/publicdomain/ 
+
+The data is governed by OCLC's use of the Attribution-Noncommercial-No
+Derivative Works 3.0 Unported:
+http://creativecommons.org/licenses/by-nc-nd/3.0/
+
 Improvements welcome at:
 http://github.com/edsu/dewey-crawler
 

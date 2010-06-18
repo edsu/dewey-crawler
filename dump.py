@@ -24,7 +24,9 @@ dct = rdflib.Namespace('http://purl.org/dc/terms/')
 
 dcc = {}
 for concept in g.subjects(RDF.type, skos.Concept):
-    code = unicode(g.value(concept, skos.notation)).replace('[]', '')
+    code = unicode(g.value(concept, skos.notation))
+    code = code.replace(']', '').replace('[', '')
+
     label = g.value(concept, skos.prefLabel)
     if not dcc.has_key(code):
         dcc[code] = {}
